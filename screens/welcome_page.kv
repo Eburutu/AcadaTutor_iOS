@@ -1,0 +1,396 @@
+<RoundedButton>:
+    background_color: 0, 0, 0, 0  # Make the background transparent
+    canvas.before:
+        Color:
+            rgba: 255, 0, 0, 1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20,]
+
+
+<WelcomePage>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 1
+
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.508, 0.33, 0 # Set the background color for the FloatLayout (R, G, B, A)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        # AdMob Banner Ad
+        # BoxLayout:
+        #     orientation: 'vertical'
+        #     size_hint_y: 0.25
+
+        AdmobBanner:
+            size_hint_y: None
+            id: banner_layout
+            height: 70
+            # orientation: 'vertical'            
+
+            # size_hint_y: None
+            # height: dp(20)
+            # pos_hint: {'center_x': 0.5}
+
+        # Logo
+        Image:
+            source: 'assets/logo.png'
+            # size_hint_y: 1.0
+            # size_hint_x: 1.0
+            size_hint: (1, 0.2)
+            # height: 330
+            # allow_stretch: False
+            # pos_hint: {'x': 0, 'y': 0.5}
+            # keep_ratio: True
+
+
+
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            size_hint_y: 0.5  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+            RoundedButton:
+                id: zoom_button
+                text: "SELECT YOUR LANGUAGE"
+                on_release: root.open_dropdown(self)
+                theme_text_color: "Custom"
+                font_size: "14sp"
+                text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+                md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+                size: dp(300), dp(38)
+                # size_hint: (0.7, 0.02)
+                size_hint: (0.7, None)
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+        
+
+
+        # FloatLayout:
+        #     orientation: 'horizontal'
+        #     canvas.before:
+        #         Color:
+        #             rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+        #         Rectangle:
+        #             pos: self.pos
+        #             size: self.size
+
+        #     size_hint_y: 0.45  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+
+        #     ImageButton2:
+        #         source: 'fonts/French.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.02, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Bienvenue chez Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.02, 'y': 0.5}
+
+            
+
+        #     ImageButton2:
+        #         source: 'fonts/Spanish.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.53, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+
+        #     # RoundedButton:
+        #     #     text: "Bienvenido a Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.53, 'y': 0.5}
+
+
+
+
+        # FloatLayout:
+        #     orientation: 'horizontal'
+        #     canvas.before:
+        #         Color:
+        #             rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+        #         Rectangle:
+        #             pos: self.pos
+        #             size: self.size
+
+        #     size_hint_y: 0.45  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+
+        #     ImageButton2:
+        #         source: 'fonts/chinese.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.02, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "欢迎来到Acada导师"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.02, 'y': 0.5}
+        #     #     # font_name: "fonts/NotoSansSC-Regular.ttf"
+
+            
+
+        #     ImageButton2:
+        #         source: 'fonts/German.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.53, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Willkommen bei Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(30)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.53, 'y': 0.5}
+
+
+        
+
+
+        # FloatLayout:
+        #     orientation: 'horizontal'
+        #     canvas.before:
+        #         Color:
+        #             rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+        #         Rectangle:
+        #             pos: self.pos
+        #             size: self.size
+
+        #     size_hint_y: 0.45  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+        #     ImageButton2:
+        #         source: 'fonts/Arabic.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.02, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "مرحبًا بك في أكادا تيوتور"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.02, 'y': 0.5}
+        #     #     # font_name: "fonts/NotoSansArabic-Regular.ttf"
+
+            
+        #     ImageButton2:
+        #         source: 'fonts/russian.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(29)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.53, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Добро пожаловать в Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.53, 'y': 0.5}
+
+
+
+        # FloatLayout:
+        #     orientation: 'horizontal'
+        #     canvas.before:
+        #         Color:
+        #             rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+        #         Rectangle:
+        #             pos: self.pos
+        #             size: self.size
+
+        #     size_hint_y: 0.45  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+        #     ImageButton2:
+        #         source: 'fonts/portuguese.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.02, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Bem-vindo ao Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.02, 'y': 0.5}
+
+
+        #     ImageButton2:
+        #         source: 'fonts/Japanese.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.53, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+            
+        #     # RoundedButton:
+        #     #     text: "Acadaチューターへようこそ"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.53, 'y': 0.5}
+        #     #     # font_name: "fonts/NotoSansJP-Regular.ttf"
+
+
+
+        # FloatLayout:
+        #     orientation: 'horizontal'
+        #     canvas.before:
+        #         Color:
+        #             rgba: 0.4, 0.508, 0.33, 0.2  # Set the background color for the FloatLayout (R, G, B, A)
+        #         Rectangle:
+        #             pos: self.pos
+        #             size: self.size
+
+        #     size_hint_y: 0.45  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+
+        #     ImageButton2:
+        #         source: 'fonts/hindi.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.02, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Acada ट्यूटर में आपका स्वागत है"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.02, 'y': 0.5}
+        #     #     # font_name: "fonts/NotoSansDevanagari-Regular.ttf"
+
+            
+        #     ImageButton2:
+        #         source: 'fonts/italian.png'
+        #         size_hint: None, None
+        #         on_release: root.goto_intro_page()
+        #         # size: dp(340), dp(30)  # Adjust the size as needed
+        #         size: self.parent.width * 0.45, self.parent.height * 0.45
+        #         pos_hint: {'x': 0.53, 'y': 0.5}
+        #         allow_stretch: True
+        #         # size_hint: (0.3, None)
+
+        #     # RoundedButton:
+        #     #     text: "Benvenuti su Acada Tutor"
+        #     #     on_release: root.goto_home_page()
+        #     #     theme_text_color: "Custom"
+        #     #     font_size: "11sp"
+        #     #     text_color: 1, 1, 1, 1  # Set the font color to white (R, G, B, A)
+        #     #     md_bg_color: 255, 0, 0, 255  # Set the button color to green (R, G, B, A)
+        #     #     size: dp(100), dp(25)
+        #     #     # size_hint: (0.7, 0.02)
+        #     #     size_hint: (0.45, None)
+        #     #     pos_hint: {'x': 0.53, 'y': 0.5}

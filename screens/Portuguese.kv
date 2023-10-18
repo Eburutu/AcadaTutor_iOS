@@ -1,0 +1,125 @@
+<PortuguesePage>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 1
+
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.508, 0.33, 0 # Set the background color for the FloatLayout (R, G, B, A)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+
+        AdmobBanner:
+            size_hint_y: None
+            id: banner_layout
+            height: 70
+            # orientation: 'vertical'            
+
+            # size_hint_y: None
+            # height: dp(20)
+            # pos_hint: {'center_x': 0.5}
+
+
+        MDLabel:
+            text: "Bem-vindo ao Acada Tutor"
+            font_style: 'H5'
+            color: 1, 0, 0, 1
+            halign: 'center'
+            size_hint_y: 0.2
+            valign: "middle"
+            text_size: (self.width, None)
+            height: self.texture_size[1]
+
+
+        # FloatLayout:
+
+        #     size_hint_y: 1  # Fix the height of the FloatLayout
+        #     height: dp(100)  # Set the absolute pixel height of the FloatLayout
+        #     pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+        FloatLayout:
+
+            size_hint_y: 0.9  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+            ImageButton3:
+                source: 'first_t/First_Portuguese.png'
+                size_hint: None, None
+                # on_release: root.goto_Edubot()
+                # size: dp(260), dp(200)  # Adjust the size as needed
+                size: self.parent.width * 0.60, self.parent.height * 0.65
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                allow_stretch: True
+
+            
+        FloatLayout:
+            orientation: "horizontal"
+            
+
+            size_hint_y: 0.95  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+            ImageButton4:
+                source: 'answer/Portuguese_Yes.png'
+                size_hint: None, None
+                on_release: root.goto_Edubot()
+                # size: dp(80), dp(30)  # Adjust the size as needed
+                size: self.parent.width * 0.2, self.parent.height * 0.4
+                pos_hint: {'x': 0.30, 'center_y': 0.5}
+                allow_stretch: True
+
+            ImageButton4:
+                source: 'answer/Portuguese_No.png'
+                size_hint: None, None
+                on_release: root.goto_home_page()
+                # size: dp(80), dp(30)  # Adjust the size as needed
+                size: self.parent.width * 0.2, self.parent.height * 0.4
+                pos_hint: {'x': 0.60, 'center_y': 0.5}
+                allow_stretch: True
+
+
+        FloatLayout:
+
+            size_hint_y: 0.9  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+
+        FloatLayout:
+            canvas.before:
+                Color:
+                    rgba: 0.4, 0.508, 0.33, 0  # Set the background color for the FloatLayout (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            size_hint_y: 1  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+
+            # MDRaisedButton:
+            #     text: "Back"
+            #     size_hint_y: 0.1
+            #     # on_release: root.goto_home_page()
+            #     on_release: root.goto_welcome_page()
+            #     pos_hint: {'right': 1, 'bottom': 1}
+
+            ImageButton5:
+                source: 'assets/back.png'
+                size_hint: None, None
+                on_release: root.goto_welcome_page()
+                size: dp(50), dp(35)  # Adjust the size as needed
+                # size: self.parent.width * 0.45, self.parent.height * 0.45
+                pos_hint: {"right": 1, "bottom": 1}
+                allow_stretch: True
+                # size_hint: (0.3, None)

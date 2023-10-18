@@ -1,0 +1,135 @@
+<HomePage>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 1
+
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.508, 0.33, 0 # Set the background color for the FloatLayout (R, G, B, A)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        
+
+        AdmobBanner:
+            size_hint_y: None
+            id: banner_layout
+            height: 70
+            # orientation: 'vertical'            
+
+            # size_hint_y: None
+            # height: dp(20)
+            # pos_hint: {'center_x': 0.5}
+
+        
+
+        # Buttons
+        FloatLayout:
+            orientation: 'horizontal'
+            canvas.before:
+                Color:
+                    rgba: 0.4, 0.508, 0.33, 0 #0.2  # Set the background color for the FloatLayout (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            size_hint_y: 0.35  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+            
+            # RoundedImageButton:
+            #     on_release: root.open_web_browser_for_Privacy()
+            #     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            ImageButton:
+                source: 'assets/button_Edubot.png'
+                size_hint: None, None
+                on_release: root.goto_Edubot()
+                size: dp(150), dp(120)  # Adjust the size as needed
+                pos_hint: {'x': 0.05, 'center_y': 0.5}
+                allow_stretch: True
+
+            ImageButton:
+                source: 'assets/Button_Academic_material.png'
+                size_hint: None, None
+                on_release: root.goto_Academic_4_HighSchool_Tertiary()
+                size: dp(150), dp(120)  # Adjust the size as needed
+                pos_hint: {'x': 0.55, 'center_y': 0.5}
+                allow_stretch: True
+
+
+        FloatLayout:
+            orientation: 'horizontal'
+            canvas.before:
+                Color:
+                    rgba: 0.4, 0.508, 0.33, 0 #0.2  # Set the background color for the FloatLayout (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            size_hint_y: 0.35  # Fix the height of the FloatLayout
+            height: dp(100)  # Set the absolute pixel height of the FloatLayout
+            pos_hint: {'center_x': 0.5, 'y': 0} 
+
+            
+            # RoundedImageButton:
+            #     on_release: root.open_web_browser_for_Privacy()
+            #     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            ImageButton:
+                source: 'assets/button_job_search.png'
+                size_hint: None, None
+                on_release: root.goto_scholarship_job_search()
+                size: dp(150), dp(120)  # Adjust the size as needed
+                pos_hint: {'x': 0.05, 'center_y': 0.5}
+                allow_stretch: True
+
+            ImageButton:
+                source: 'assets/button_privacy.png'
+                size_hint: None, None
+                on_release: root.open_web_browser_for_Private()
+                size: dp(150), dp(120)  # Adjust the size as needed
+                pos_hint: {'x': 0.55, 'center_y': 0.5}
+                allow_stretch: True
+                
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.15
+            canvas.before:
+                Color:
+                    rgba: 0.4, 0.508, 0.33, 0 #0.2  # Set the background color for the FloatLayout (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        #     MDFlatButton:
+        #         text: "Terms & Policies"
+        #         # on_release: root.goto_terms_policy_page()
+        #         on_release: root.open_web_browser_for_Privacy()
+        #         theme_text_color: "Custom"
+        #         font_size: '10sp'
+        #         text_color: 0, 0, 0, 1  # Set the font color to white (R, G, B, A)
+        #         md_bg_color: 1, 1, 1, 1  # Set the button color to green (R, G, B, A)
+        #         size: dp(100), dp(10)
+        #         pos_hint: {'center_x': 0.5, 'bottom': 1}
+        #         # size_hint: (0.15, None)
+
+
+        # Back Button
+        # MDRaisedButton:
+        #     text: "Back"
+        #     size_hint_y: 0.1
+        #     # on_release: root.goto_home_page()
+        #     on_release: root.goto_intro_page()
+        #     pos_hint: {'right': 1, 'bottom': 1}
+
+        ImageButton5:
+            source: 'assets/back.png'
+            size_hint: None, None
+            on_release: root.goto_intro_page()
+            size: dp(50), dp(35)  # Adjust the size as needed
+            # size: self.parent.width * 0.45, self.parent.height * 0.45
+            pos_hint: {"right": 1, "bottom": 1}
+            allow_stretch: True
+            # size_hint: (0.3, None)
